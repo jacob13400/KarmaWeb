@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react'
 import jwt_decode from 'jwt-decode'
+import { login } from './UserFunctions'
 
 class Profile extends Component {
   constructor() {
@@ -18,12 +19,17 @@ class Profile extends Component {
   componentDidMount() {
     const token = localStorage.usertoken
     const decoded = jwt_decode(token)
+
+    login(decoded).then(res => {
+      console.log(res);
+
     this.setState({
-      first_name: decoded.firstname,
-      middle_name: decoded.middlename,
-      last_name: decoded.lastname,
-      gender: decoded.gender,
-      nationality: decoded.nationality,
+      first_name: res.first_name,
+      middle_name: res.middle_name,
+      last_name: res.last_name,
+      gender: res.gender,
+      nationality: res.nationality,
+    })
     })
   }
 
@@ -40,7 +46,14 @@ class Profile extends Component {
                 <td>First Name</td>
                 <td>{this.state.first_name}</td>
               </tr>
+
+              {this.state.middle_name != null ?
               <tr>
+                <td>Middle Name</td>
+                <td>{this.state.middle_name}</td>
+              </tr>: null}
+
+              <tr> 
                 <td>Last Name</td>
                 <td>{this.state.last_name}</td>
               </tr>

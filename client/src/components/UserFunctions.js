@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export const register = user => {
   return axios
-    .post('authentication/login', {
+    .post('authentication/register', {
       email: user.id,
       password: user.password,
       firstname: user.firstname,
@@ -11,6 +11,7 @@ export const register = user => {
       gender: user.gender,
       nationality: user.nationality,
       password: '123456789abc',
+      dob: user.dob
     },{
       headers: {
         'Content-Type': 'application/json'
@@ -23,13 +24,13 @@ export const register = user => {
 
 export const login = user => {
   return axios
-    .post('users/login', {
-      id: user.id,
-      password: user.password
+    .post('private/people/people/details', {
+      id: user.userId
     })
     .then(response => {
-      localStorage.setItem('usertoken', response.token)
-      return response.token
+      // localStorage.setItem('usertoken', response.token)
+      console.log(response.data)
+      return response.data.classes
     })
     .catch(err => {
       console.log(err)

@@ -11,6 +11,7 @@ class Register extends Component {
       last_name: '',
       gender:'',
       nationality:'',
+      dob:'',
       errors: {}
     }
 
@@ -31,6 +32,8 @@ class Register extends Component {
       lastname: this.state.last_name,
       gender: this.state.gender,
       nationality: this.state.nationality,
+      dob: this.state.dob,
+      password: '123456789abc'
     }
 
     register(newUser).then(res => {
@@ -97,6 +100,17 @@ class Register extends Component {
                   name="gender"
                   placeholder="Enter your gender"
                   value={this.state.gender}
+                  onChange={this.onChange}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="name">Date of Birth</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  name="dob"
+                  placeholder="YYYY-MM-DD"
+                  value={this.state.dob}
                   onChange={this.onChange}
                 />
               </div>
