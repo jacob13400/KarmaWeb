@@ -59,12 +59,15 @@ export const auth = user => {
 
 
 export const attendance = user => {
+  let url = 'private/student/student_attendance_data'
+  url = url + '/' + user.id + '/1'
   return axios
-    .post('users/attendancestudent', {
+    .get(url, {
         id : user.id,
     })
     .then(response => {
-      return response.data
+      console.log(response.data)
+      return response.data.classes
     })
     .catch(err => {
       console.log(err)
@@ -72,12 +75,15 @@ export const attendance = user => {
 }
 
 export const attendancefaculty = user => {
+  let url = 'private/student/student_attendance_data'
+  url = url + '/' + user.id + '/1'
   return axios
-    .post('users/attendancefaculty', {
+    .get(url, {
         id : user.id,
     })
     .then(response => {
-      return response.data
+      console.log(response.data)
+      return response.data.classes
     })
     .catch(err => {
       console.log(err)
@@ -99,12 +105,18 @@ export const attendancegetfaculty = user => {
     })
 }
 
-export const attendanceinput = user => {
+export const attendanceUpdate = user => {
+  let url = 'private/student/student_attendance_data'
+  url = url + '/' + user.id + '/1'
   return axios
-    .put('users/attendanceinput', {
-        name : user.name,
+    .put(url, {
         value:user.attendance,
-        id: user.id
+        people_id: user.id,
+        course_id: 1
+    },{
+      headers: {
+        'Content-Type': 'application/json'
+      }
     })
     .then(response => {
       return response.data

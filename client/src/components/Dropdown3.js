@@ -59,7 +59,7 @@ showDropdownMenu(event) {
     const decoded = jwt_decode(token)
 
     let user={
-      id: decoded.id,
+      id: decoded.userId,
     };
 
 
@@ -90,10 +90,10 @@ showDropdownMenu(event) {
 
 <select id = "semesterSelector" onChange ={this.handleChange} >
 <option selected disabled hidden value="0">select a class</option>
-   <option value="1"> S1 </option>
-   <option value="3" > S3 </option>
-   <option value="5" > S5 </option>
-   <option value="7"> S7 </option>
+   <option value="1"> S1 CSE </option>
+   <option value="3" > S3 CSE </option>
+   <option value="1" > S1 EC </option>
+   <option value="7"> S7 EC</option>
 </select> 
 {this.state.val >0 ?(
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import jwt_decode from 'jwt-decode'
 
-import { attendance, attendanceinput, role } from './UserFunctions'
+import { attendance, attendanceUpdate, role } from './UserFunctions'
 
 import logo from '../logo.svg';
 import '../App.css';
@@ -31,6 +31,7 @@ class Attendance extends React.Component {
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value })
   }
+
   onSubmit(e) {
     e.preventDefault()
 
@@ -40,7 +41,9 @@ class Attendance extends React.Component {
       attendance: this.state.attendance,
     }
 
-    attendanceinput(userUpdate).then(res => {
+    console.log(userUpdate)
+
+    attendanceUpdate(userUpdate).then(res => {
       if (res) {
        
         console.log(res)
@@ -48,9 +51,6 @@ class Attendance extends React.Component {
     
     })
   }
-
-  
-
 
   componentDidMount() {
     const token = localStorage.usertoken
@@ -62,7 +62,7 @@ class Attendance extends React.Component {
     })
 
     const user = {
-      id: decoded.id,
+      id: decoded.userId,
     }
 
 
@@ -91,9 +91,9 @@ class Attendance extends React.Component {
       render() {
         return (
             <div>
-              {this.state.role == 'F'?(
+              {this.state.role !== 'F'?(
                     <div>
-                    <Dropdown/>
+                    <Dropdown tableRows ={this.state.tableRows}/>
                     <h3>OR</h3>
                     <h3>Update Attendance</h3>
             <form noValidate onSubmit={this.onSubmit}>
