@@ -1,5 +1,26 @@
 import React, { Component } from 'react'
 import { register } from './UserFunctions'
+import { Dropdown } from 'semantic-ui-react'
+// const genderOptions = [
+// 	{
+// 		key:"gender",
+// 		text:"Male",
+// 		value:"Male",
+// 		// image:{avatar:true,src:'/images/gender/male.jpg'}
+// 	},
+// 	{
+// 		key:"gender",
+// 		value:"Female",
+// 		text:"Female",
+// 		// image:{avatar:true,src:'/images/gender/female.jpg'}
+// 	},
+// 	{
+// 		key:"gender",
+// 		value:"Non-Binary",
+// 		text:"Non-Binary",
+// 	}
+// ]
+
 
 class Register extends Component {
   constructor() {
@@ -49,12 +70,12 @@ class Register extends Component {
             <form noValidate onSubmit={this.onSubmit}>
               <h1 className="h3 mb-3 font-weight-normal">Register</h1>
               <div className="form-group">
-                <label htmlFor="name">ID</label>
+                <label htmlFor="name">E-Mail</label>
                 <input
                   type="text"
                   className="form-control"
                   name="id"
-                  placeholder="Enter your ID"
+                  placeholder="yourEmail@example.com"
                   value={this.state.id}
                   onChange={this.onChange}
                 />
@@ -65,7 +86,7 @@ class Register extends Component {
                   type="text"
                   className="form-control"
                   name="first_name"
-                  placeholder="Enter your first name"
+                  placeholder="ex:Thomas"
                   value={this.state.first_name}
                   onChange={this.onChange}
                 />
@@ -76,7 +97,7 @@ class Register extends Component {
                   type="text"
                   className="form-control"
                   name="middle_name"
-                  placeholder="Enter your middlename name"
+                  placeholder="ex:Alva"
                   value={this.state.middle_name}
                   onChange={this.onChange}
                 />
@@ -87,7 +108,7 @@ class Register extends Component {
                   type="text"
                   className="form-control"
                   name="last_name"
-                  placeholder="Enter your lastname name"
+                  placeholder="ex:Edison"
                   value={this.state.last_name}
                   onChange={this.onChange}
                 />
@@ -95,13 +116,16 @@ class Register extends Component {
               <div className="form-group">
                 <label htmlFor="name">Gender</label>
                 <input
-                  type="text"
+				  type="text"
                   className="form-control"
                   name="gender"
-                  placeholder="Enter your gender"
+				  placeholder="ex:Male"
                   value={this.state.gender}
                   onChange={this.onChange}
-                />
+				  />
+				  {/* <DropdownExampleSearchSelectionTwo>
+				  value={this.state.gender}
+		  		  onChange={this.onChange}</DropdownExampleSearchSelectionTwo> */}
               </div>
               <div className="form-group">
                 <label htmlFor="name">Date of Birth</label>
@@ -120,7 +144,7 @@ class Register extends Component {
                   type="text"
                   className="form-control"
                   name="nationality"
-                  placeholder="Enter your nationality"
+                  placeholder="ex:Indian"
                   value={this.state.nationality}
                   onChange={this.onChange}
                 />

@@ -12,7 +12,7 @@
 	font-family: 'Open Sans', sans-serif;
 }
 .App-header {
-  background-color: #ff2d54;
+  background-color: #e5e5ea;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -23,7 +23,7 @@
 }
 .container{
 
-  background-color: #ff2d54;
+  background-color: #e5e5ea;;
 }
 .App-link {
   color: #61dafb;
