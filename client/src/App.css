@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 .App {
   text-align: center;
 }
@@ -7,20 +8,22 @@
   height: 40vmin;
   pointer-events: none;
 }
-
+.body{
+	font-family: 'Open Sans', sans-serif;
+}
 .App-header {
-  background-color: #282c34;
+  background-color: #e5e5ea;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #e5e5ea;
 }
 .container{
 
-  background-color: #818181;
+  background-color: #e5e5ea;;
 }
 .App-link {
   color: #61dafb;

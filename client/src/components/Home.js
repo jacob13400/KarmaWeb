@@ -6,6 +6,7 @@ import '../App.css'
 class Home extends Component {
   render() {
     return (
+		<div className="body">
       <div className="container" >
         <div className="jumbotron mt-5">
           <div className="col-sm-8 mx-auto">
@@ -13,6 +14,7 @@ class Home extends Component {
           </div>
         </div>
       </div>
+	  </div>
     )
   }
 }
