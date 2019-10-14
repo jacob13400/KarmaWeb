@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { register } from './UserFunctions'
-import { Dropdown } from 'semantic-ui-react'
+// import { Dropdown } from 'semantic-ui-react'
 // const genderOptions = [
 // 	{
 // 		key:"gender",

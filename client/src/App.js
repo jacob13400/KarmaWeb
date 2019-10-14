@@ -11,6 +11,7 @@ import Navigator from './components/Navigator'
 import Admission from './components/Admission'
 import Attendance from './components/Attendance'
 import ScoreCard from './components/ScoreCard'
+import CourseList from './components/CourseList'
 import Dropdown from './components/Dropdown3'
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
             <Route exact path="/profile" component={Profile} />
             <Route exact path="/attendance" component={Attendance} />
             <Route exact path="/scorecard" component={ScoreCard} />
+            <Route exact path="/courselist" component={CourseList} />
             <Route exact path="/admission" component={Admission} />
           </div>
         </div>

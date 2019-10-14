@@ -26,19 +26,19 @@ class Navigator extends React.Component {
 
     componentDidMount(){
 
-      const token = localStorage.usertoken
-      const decoded = jwt_decode(token)
+      // const token = localStorage.usertoken
+      // const decoded = jwt_decode(token)
   
-      const user={
-        id: decoded.userId
-      }
-      attendancegetfaculty(user).then(res => {
-        if(res){
-          console.log(res);
-          const role = (res.some(item => item.people_id == user.id))
-          this.setState({role: role})
-        }
-      })
+      // const user={
+      //   id: decoded.userId
+      // }
+      // attendancegetfaculty(user).then(res => {
+      //   if(res){
+      //     console.log(res);
+      //     const role = (res.some(item => item.people_id == user.id))
+      //     this.setState({role: role})
+      //   }
+      // })
 
     }
 
@@ -62,6 +62,8 @@ class Navigator extends React.Component {
                 <Link to="/attendance">Attendance</Link>
 
                 <Link to="/scorecard">Score Card</Link>
+                
+                <Link to="/courselist">Courses</Link>
                 
                 <Link to="/profile" className="nav-link">
                   User

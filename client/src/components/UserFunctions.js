@@ -170,3 +170,18 @@ export const role = user => {
     })
 }
 
+export const internalScore = user => {
+  let url = 'private/student/student_course_internal_assessment'
+  url = url + '/' + user.id 
+  return axios
+    .get(url , {
+        id : user.id,
+    })
+    .then(response => {
+      console.log(response.data.data)
+      return response.data.data
+    })
+    .catch(err => {
+      console.log(err)
+    })
+}
