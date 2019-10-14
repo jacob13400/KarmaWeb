@@ -131,6 +131,7 @@ class Register extends Component {
               >
                 Register!
               </button>
+			  <br></br>
             </form>
           </div>
         </div>
