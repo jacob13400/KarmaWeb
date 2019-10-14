@@ -1,6 +1,7 @@
 import './Navigator.css';
 import '../App.css'
 
+import jwt_decode from 'jwt-decode'
 import React, { Component } from 'react'
 
 import Home from './Home'
@@ -10,6 +11,7 @@ import Profile from './Profile'
 // import Attendance from './Attendance'
 //import Admission from './Admission'
 import { Redirect } from 'react-router'
+import { attendancegetfaculty } from './UserFunctions'
 import { BrowserRouter as Router, Switch, Route, Link, withRouter } from 'react-router-dom';
 
 class Navigator extends React.Component {
@@ -21,6 +23,24 @@ class Navigator extends React.Component {
         localStorage.removeItem('usertoken')
         this.props.history.push(`/`)
       }
+
+    componentDidMount(){
+
+      const token = localStorage.usertoken
+      const decoded = jwt_decode(token)
+  
+      const user={
+        id: decoded.userId
+      }
+      attendancegetfaculty(user).then(res => {
+        if(res){
+          console.log(res);
+          const role = (res.some(item => item.people_id == user.id))
+          this.setState({role: role})
+        }
+      })
+
+    }
 
     render(){
         const loginRegLink = (
@@ -40,6 +60,9 @@ class Navigator extends React.Component {
             <nav>
 
                 <Link to="/attendance">Attendance</Link>
+
+                <Link to="/scorecard">Score Card</Link>
+                
                 <Link to="/profile" className="nav-link">
                   User
                 </Link>

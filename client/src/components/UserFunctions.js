@@ -60,7 +60,7 @@ export const auth = user => {
 
 export const attendance = user => {
   let url = 'private/student/student_attendance_data'
-  url = url + '/' + user.id + '/1'
+  url = url + '/' + user.id
   return axios
     .get(url, {
         id : user.id,
@@ -90,15 +90,46 @@ export const attendancefaculty = user => {
     })
 }
 
-
-
-export const attendancegetfaculty = user => {
+export const attendancefacultyname = user => {
+  let url = 'private/people/people/details'
   return axios
-    .post('users/attendancegetfaculty', {
+    .post(url, {
         id : user.id,
     })
     .then(response => {
+      console.log(response.data)
       return response.data
+    })
+    .catch(err => {
+      console.log(err)
+    })
+}
+
+
+export const attendancecoursename = user => {
+  let url = 'private/courses/'
+  url = url + '/' + user.id
+  return axios
+    .get(url, {
+        id : user.id,
+    })
+    .then(response => {
+      console.log(response.data)
+      return response.data
+    })
+    .catch(err => {
+      console.log(err)
+    })
+}
+
+export const attendancegetfaculty = user => {
+  return axios
+    .get('private/faculty/faculty_academic_enrolment_activity/', {
+        id : user.id,
+    })
+    .then(response => {
+      console.log(response.data.classes)
+      return response.data.classes
     })
     .catch(err => {
       console.log(err)

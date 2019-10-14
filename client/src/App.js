@@ -11,6 +11,7 @@ import Register from './components/Register'
 import Navigator from './components/Navigator'
 import Admission from './components/Admission'
 import Attendance from './components/Attendance'
+import ScoreCard from './components/ScoreCard'
 import Dropdown from './components/Dropdown3'
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
             <Route exact path="/login" component={Login} />
             <Route exact path="/profile" component={Profile} />
             <Route exact path="/attendance" component={Attendance} />
+            <Route exact path="/scorecard" component={ScoreCard} />
             <Route exact path="/admission" component={Admission} />
           </div>
         </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import jwt_decode from 'jwt-decode'
 
-import { attendance, attendanceUpdate, role } from './UserFunctions'
+import { attendance, attendanceUpdate, attendancegetfaculty, attendancefacultyname, attendancecoursename } from './UserFunctions'
 
 import logo from '../logo.svg';
 import '../App.css';
@@ -76,22 +76,47 @@ class Attendance extends React.Component {
     }
   })
 
-  role(user).then(res => {
-    if (res) {
-      this.setState({
-        role: res.role
-      })
-
-      console.log(res)
+  attendancegetfaculty(user).then(res => {
+    if(res){
+      console.log(res);
+      const role = (res.some(item => item.people_id == user.id))
+      this.setState({role: role})
     }
   })
 
   }
-    
+
+  getFaculty(facultyId){
+    const user={
+      id: facultyId
+    }
+
+    attendancefacultyname(user).then(res => {
+      if(res){
+        console.log(res)
+        return res
+      }
+    })
+  }
+
+
+  getCourse(courseId){
+    const user={
+      id: courseId
+    }
+
+    attendancecoursename(user).then(res => {
+      if(res){
+        console.log(res)
+        return res
+      }
+    })
+  }
+
       render() {
         return (
             <div>
-              {this.state.role !== 'F'?(
+              {this.state.role?(
                     <div>
                     <Dropdown tableRows ={this.state.tableRows}/>
                     <h3>OR</h3>
@@ -145,6 +170,7 @@ class Attendance extends React.Component {
 
                 </tr>
                   {this.state.tableRows.map(item => {
+                    {/* const facultyName = this.getFaculty(item.faculty_id); */}
                     return (
                       <tr>
                       
