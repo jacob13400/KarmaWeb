@@ -1,5 +1,6 @@
 import './Navigator.css';
 import '../App.css'
+import logo from './assets/logo.svg'
 
 import jwt_decode from 'jwt-decode'
 import React, { Component } from 'react'
@@ -44,24 +45,27 @@ class Navigator extends React.Component {
 
     render(){
         const loginRegLink = (
+
             <nav>
                 <Link to="/login" className="nav-link">
                   Login
                 </Link>
-             
+
                 <Link to="/register" className="nav-link">
                   Admission
                 </Link>
             </nav>
              
-          )
-      
+		  )
+
           const userLink = (
             <nav>
+				<img src={logo} alt="Logo" width="200px" height="200px" class="rounded-circle"/>
+				<Link to="#" className="roll">TVECS0029</Link>
 
-                <Link to="/attendance">Attendance</Link>
-
-                <Link to="/scorecard">Score Card</Link>
+                <Link to="/attendance" className="nav-link">Attendance</Link>
+				
+                <Link to="/scorecard" className="nav-link">Score Card</Link>
                 
                 <Link to="/profile" className="nav-link">
                   User
