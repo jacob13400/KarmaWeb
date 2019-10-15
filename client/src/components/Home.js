@@ -39,7 +39,7 @@ class Home extends Component {
       		<div className="container" >
         		<div className="jumbotron mt-5 bg-dark">
           			<div className="col-sm-5 mx-auto">
-            			<h1 className="text-center bg-dark text-light">Welcome {this.state.first_name} Abhishek</h1>
+            			<h1 className="text-center bg-dark text-light">Welcome {this.state.first_name}</h1>
           			</div>
         		</div>
       		</div>
