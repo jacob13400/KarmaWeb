@@ -9,7 +9,8 @@
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
-    color: white;
+	color: white;
+	padding-right: 20px;
   }
   
   body {
@@ -18,20 +19,21 @@
     
     .sidenav {
       height: 100%;
-      width: 160px;
+      width: 320px;
       position: fixed;
       z-index: 1;
       top: 0;
       left: 0;
       background-color: #111;
       overflow-x: hidden;
-      padding-top: 20px;
+	  padding-top: 20px;
+	  padding-right: 20px;
     }
     
     .sidenav a {
-      padding: 6px 8px 6px 16px;
+      padding: 20px 8px 6px 16px;
       text-decoration: none;
-      font-size: 25px;
+      font-size: 40px;
       color: #818181;
       display: block;
     }
@@ -49,4 +51,10 @@
     @media screen and (max-height: 450px) {
       .sidenav {padding-top: 15px;}
       .sidenav a {font-size: 18px;}
-    }
+	}
+	
+	.roll{
+		padding-bottom: 50px;
+	}
+	
+	
