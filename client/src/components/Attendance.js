@@ -18,8 +18,10 @@ class Attendance extends React.Component {
         id:'',
         class:'',
         role:'',
-      tableRows:[],
-      errors: {}
+        tableRows:[],
+        errors: {},
+        facultyName: [],
+
       
     }
 
@@ -76,6 +78,8 @@ class Attendance extends React.Component {
     }
   })
 
+  this.getFaculty(this.state.tableRows);
+
   attendancegetfaculty(user).then(res => {
     if(res){
       console.log(res);
@@ -87,16 +91,20 @@ class Attendance extends React.Component {
   }
 
   getFaculty(facultyId){
-    const user={
-      id: facultyId
-    }
 
-    attendancefacultyname(user).then(res => {
-      if(res){
-        console.log(res)
-        return res
+    for(let i=0;i<this.state.tableRows.length;i++){
+      const user={
+        id: this.state.tableRows[i].faculty_id
       }
-    })
+
+      attendancefacultyname(user).then(res => {
+        if(res){
+          console.log(res)
+          this.setState({ facultyName: this.state.facultyName.push(res) })
+          return res
+        }
+      })
+    }
   }
 
 
