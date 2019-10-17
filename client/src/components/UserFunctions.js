@@ -97,8 +97,8 @@ export const attendancefacultyname = user => {
         id : user.id,
     })
     .then(response => {
-      console.log(response.data)
-      return response.data
+      console.log(response.data.classes)
+      return response.data.classes
     })
     .catch(err => {
       console.log(err)
