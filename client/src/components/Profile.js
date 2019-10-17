@@ -53,10 +53,12 @@ class Profile extends Component {
                 <td>{this.state.middle_name}</td>
               </tr>: null}
 
-              <tr> 
+              {this.state.last_name ?
+              <tr>
                 <td>Last Name</td>
                 <td>{this.state.last_name}</td>
-              </tr>
+              </tr>: null}
+
               <tr>
                 <td>Gender</td>
                 <td>{this.state.gender}</td>
