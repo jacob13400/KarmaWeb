@@ -166,7 +166,7 @@ class Attendance extends React.Component {
             (
               <div className="jumbotron mt-5">
               <div className="col-sm-8 mx-auto">
-                <h1 className="text-center">Check</h1>
+                <h1 className="text-center">Attendance</h1>
               </div>
               <table className="table col-md-6 mx-auto">
               <tbody>

@@ -1,6 +1,6 @@
 import './Navigator.css';
 import '../App.css'
-import logo from './assets/logo.svg'
+import logo from './assets/logo.png'
 
 import jwt_decode from 'jwt-decode'
 import React, { Component } from 'react'
@@ -61,8 +61,9 @@ class Navigator extends React.Component {
           const userLink = (
             <nav>
 				<img src={logo} alt="Logo" width="200px" height="200px" class="rounded-circle"/>
-				<Link to="#" className="roll">TVECS0029</Link>
-
+				<br></br><br></br><br></br>
+				<h1 className="roll">TVECS0029</h1>
+				<br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
                 <Link to="/attendance" className="nav-link">Attendance</Link>
 				
                 <Link to="/scorecard" className="nav-link">Score Card</Link>
@@ -72,11 +73,11 @@ class Navigator extends React.Component {
                 <Link to="/profile" className="nav-link">
                   User
                 </Link>
-             
+				
                 <a href="" onClick={this.logOut.bind(this)} className="nav-link">
                   Logout</a>
             </nav>
-             
+
           )
 
         return(
