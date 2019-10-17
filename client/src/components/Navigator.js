@@ -60,10 +60,12 @@ class Navigator extends React.Component {
 
           const userLink = (
             <nav>
+
 				<img src={logo} alt="Logo" width="200px" height="200px" class="rounded-circle"/>
 				<br></br><br></br><br></br>
 				<h1 className="roll">TVECS0029</h1>
 				<br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+				<Link to="/home">Dashboard</Link>
                 <Link to="/attendance" className="nav-link">Attendance</Link>
 				
                 <Link to="/scorecard" className="nav-link">Score Card</Link>
@@ -85,7 +87,6 @@ class Navigator extends React.Component {
         
         <div class="sidenav">
                 <nav>
-                    <Link to="/">Dashboard</Link>
                  
                     {localStorage.usertoken ? userLink : loginRegLink}
 

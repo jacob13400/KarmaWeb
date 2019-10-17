@@ -56,8 +56,8 @@ class Home extends Component {
 						{/* <button type="button" class="btn btn-primary m-4">Lsmc2 break<br></br><br></br>12:00PM to 1:00PM</button><br></br> */}
 						<div class="row" className="text-center">
 						<button type="button" class="btn btn-secondary m-1 col-sm-3">Life Skills<br></br><br></br>1:00PM to 2:00PM</button>
-						<button type="button" class="btn btn-secondary m-1 col-sm-3">Data Structures<br></br><br></br>2:00PM to 3:00PM</button>
-						<button type="button" class="btn btn-secondary m-1 col-sm-3">Engineering Mathematics<br></br><br></br>3:00PM to 4:00PM</button>
+						<button type="button" class="btn btn-secondary m-1 col-sm-3">Business Econimics<br></br><br></br>2:00PM to 3:00PM</button>
+						<button type="button" class="btn btn-secondary m-1 col-sm-3">Chemistry<br></br><br></br>3:00PM to 4:00PM</button>
 						</div>
           			</div>
         		</div>
@@ -66,9 +66,9 @@ class Home extends Component {
         		<div className="jumbotron mt-5 bg-light sizeAdjuster">
 				<div className="col-sm-12">
             			<h1 className="text-center text-dark">Assignments</h1>
-						<button type="button" class="btn btn-secondary m-4 ">Database Management<br></br><br></br>Due Today</button>
-						<button type="button" class="btn btn-secondary m-4">Data Structures<br></br><br></br>Due tomorrow</button>
-						<button type="button" class="btn btn-secondary m-4">Engineering Mathematics<br></br><br></br>Due in 2 days</button>
+						<button type="button" class="btn btn-secondary m-3 ">Database Management<br></br><br></br>Due Today</button>
+						<button type="button" class="btn btn-secondary m-3">Data Structures<br></br><br></br>Due tomorrow</button>
+						<button type="button" class="btn btn-secondary m-3">Engineering Mathematics<br></br><br></br>Due in 2 days</button>
           			</div>
         		</div>
       		</div>

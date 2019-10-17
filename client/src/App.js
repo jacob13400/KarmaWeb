@@ -20,9 +20,9 @@ function App() {
         <Navigator />
         <div className="App">
           <div className="container">
-            <Route exact path="/" component={Home} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/home" component={Home} />
             <Route exact path="/profile" component={Profile} />
             <Route exact path="/attendance" component={Attendance} />
             <Route exact path="/scorecard" component={ScoreCard} />
