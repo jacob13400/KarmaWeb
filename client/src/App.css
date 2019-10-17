@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
-.App {
+@import url('https://fonts.googleapis.com/css?family=Questrial&display=swap');.App {
   text-align: center;
 }
 
@@ -9,7 +8,13 @@
   pointer-events: none;
 }
 .body{
-	font-family: 'Open Sans', sans-serif;
+	margin-left: 300px;
+	font-family: 'Questrial', sans-serif;
+
+
+}
+.sizeAdjuster{
+	width: 100%
 }
 .App-header {
   background-color: #e5e5ea;
@@ -23,8 +28,11 @@
 }
 .container{
 
-  background-color: #e5e5ea;;
 }
+/* .colorThemeSet{
+	color:#ff2d54;
+	background-color:#ff2d54 ;
+} */
 .App-link {
   color: #61dafb;
 }
@@ -37,5 +45,3 @@
     transform: rotate(360deg);
   }
 }
-
-
