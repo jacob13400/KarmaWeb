@@ -1,8 +1,13 @@
 import axios from 'axios'
 
+const api_root = process.env.REACT_APP_API_ROOT;
+// const api_root = "http://localhost:3000/"
+
+console.log("api root: " + api_root)
+
 export const register = user => {
   return axios
-    .post('authentication/register', {
+    .post(api_root + 'authentication/register', {
       email: user.id,
       password: user.password,
       firstname: user.firstname,
@@ -24,7 +29,7 @@ export const register = user => {
 
 export const login = user => {
   return axios
-    .post('private/people/people/details', {
+    .post(api_root + 'private/people/people/details', {
       id: user.userId
     })
     .then(response => {
@@ -39,7 +44,7 @@ export const login = user => {
 
 export const auth = user => {
   return axios
-    .post('authentication/login/karma', {
+    .post(api_root + 'authentication/login/karma', {
       email: user.id,
       password: user.password,
     },{
@@ -59,7 +64,7 @@ export const auth = user => {
 
 
 export const attendance = user => {
-  let url = 'private/student/student_attendance_data'
+  let url = api_root + 'private/student/student_attendance_data'
   url = url + '/' + user.id
   return axios
     .get(url, {
@@ -75,7 +80,7 @@ export const attendance = user => {
 }
 
 export const attendancefaculty = user => {
-  let url = 'private/student/student_attendance_data'
+  let url = api_root + 'private/student/student_attendance_data'
   url = url + '/' + user.id + '/1'
   return axios
     .get(url, {
@@ -91,7 +96,7 @@ export const attendancefaculty = user => {
 }
 
 export const attendancefacultyname = user => {
-  let url = 'private/people/people/details'
+  let url = api_root + 'private/people/people/details'
   return axios
     .post(url, {
         id : user.id,
@@ -107,7 +112,7 @@ export const attendancefacultyname = user => {
 
 
 export const attendancecoursename = user => {
-  let url = 'private/courses/'
+  let url = api_root + 'private/courses/'
   url = url + '/' + user.id
   return axios
     .get(url, {
@@ -124,7 +129,7 @@ export const attendancecoursename = user => {
 
 export const attendancegetfaculty = user => {
   return axios
-    .get('private/faculty/faculty_academic_enrolment_activity/', {
+    .get(api_root + 'private/faculty/faculty_academic_enrolment_activity/', {
         id : user.id,
     })
     .then(response => {
@@ -137,7 +142,7 @@ export const attendancegetfaculty = user => {
 }
 
 export const attendanceUpdate = user => {
-  let url = 'private/student/student_attendance_data'
+  let url = api_root + 'private/student/student_attendance_data'
   url = url + '/' + user.id + '/1'
   return axios
     .put(url, {
@@ -159,7 +164,7 @@ export const attendanceUpdate = user => {
 
 export const role = user => {
   return axios
-    .post('users/role', {
+    .post(api_root + 'users/role', {
         id: user.id
     })
     .then(response => {
@@ -171,7 +176,7 @@ export const role = user => {
 }
 
 export const internalScore = user => {
-  let url = 'private/student/student_course_internal_assessment'
+  let url = api_root + 'private/student/student_course_internal_assessment'
   url = url + '/' + user.id 
   return axios
     .get(url , {
