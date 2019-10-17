@@ -49,7 +49,7 @@ class Home extends Component {
 				<div class="col-sm-12" style={{marginRight: 'auto', marginLeft: 'auto'}}>
             			<h1 className="text-center text-dark">Today's timetable</h1><br></br>
 						<div class="row" className="text-center">
-						<button type="button" className = "colorThemeSet" class="btn btn-secondary m-1 col-sm-3">Physics<br></br><br></br>9:00PM to 10:00PM</button>
+						<button type="button" class="btn btn-secondary m-1 col-sm-3">Physics<br></br><br></br>9:00PM to 10:00PM</button>
 						<button type="button" class="btn btn-secondary m-1 col-sm-3">Data Structures<br></br><br></br>10:00PM to 11:00PM</button>
 						<button type="button" class="btn btn-secondary m-1 col-sm-3">Engineering Mathematics<br></br><br></br>11:00PM to 12:00PM</button>
 						</div>

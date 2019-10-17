@@ -55,7 +55,7 @@ class Attendance extends React.Component {
   }
 
   componentDidMount() {
-    const token = localStorage.usertoken
+	const token = localStorage.usertoken
     const decoded = jwt_decode(token)
     this.setState({
       name: decoded.first_name,
@@ -65,20 +65,11 @@ class Attendance extends React.Component {
 
     const user = {
       id: decoded.userId,
-    }
+	}
+	
+	this.getAttendance();
 
-
-  attendance(user).then(res => {
-    if (res) {
-      this.setState({
-        tableRows: res
-      })
-
-      console.log(res)
-    }
-  })
-
-  this.getFaculty(this.state.tableRows);
+	this.getFaculty(this.state.tableRows);
 
   attendancegetfaculty(user).then(res => {
     if(res){
@@ -90,7 +81,34 @@ class Attendance extends React.Component {
 
   }
 
+  getAttendance(){
+	const token = localStorage.usertoken
+    const decoded = jwt_decode(token)
+    this.setState({
+      name: decoded.first_name,
+      attendance: decoded.value,
+      class: decoded.class,
+    })
+
+    const user = {
+      id: decoded.userId,
+	}
+	
+	attendance(user).then(res => {
+		if (res) {
+		  this.setState({
+			tableRows: res
+		  })
+	
+		  console.log(res)
+		}
+	  })
+	
+  }
+
   getFaculty(facultyId){
+
+	console.log(facultyId)
 
     for(let i=0;i<this.state.tableRows.length;i++){
       const user={
