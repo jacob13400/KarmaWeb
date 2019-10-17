@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-// const api_root = process.env.REACT_APP_API_ROOT;
-const api_root = "http://localhost:3000/"
+const api_root = process.env.REACT_APP_API_ROOT;
+// const api_root = "http://localhost:3000/"
 
 console.log("api root: " + api_root)
 
